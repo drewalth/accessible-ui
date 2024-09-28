@@ -9,6 +9,11 @@ import SwiftUI
 
 // MARK: - AccessibleProgressViewModifier
 
+/// A view modifier that makes a progress view accessible.
+/// - Parameters:
+/// - label: The label for the progress view.
+/// - value: The value of the progress view.
+/// - hint: The hint for the progress view.
 public struct AccessibleProgressViewModifier: ViewModifier {
   private let label: String
   private let value: Double? // Optional for indeterminate states

@@ -9,10 +9,15 @@ import SwiftUI
 
 // MARK: - AccessibleSegmentedControlModifier
 
+/// A view modifier that makes a segmented control accessible.
+/// - Parameters:
+/// - label: The label for the segmented control.
+/// - selectedSegment: The index of the selected segment.
+/// - segments: The segments of the segmented control.
+/// - hint: The hint for the segmented control.
 public struct AccessibleSegmentedControlModifier: ViewModifier {
 
   // MARK: Lifecycle
-
 
   public init(label: String, selectedSegment: Binding<Int>, segments: [String], hint: String?) {
     self.label = label
@@ -22,7 +27,6 @@ public struct AccessibleSegmentedControlModifier: ViewModifier {
   }
 
   // MARK: Public
-
 
   public func body(content: Content) -> some View {
     content

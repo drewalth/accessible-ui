@@ -9,6 +9,9 @@ import SwiftUI
 
 // MARK: - AccessibleHeadingModifier
 
+/// A view modifier that makes a view accessible as a heading.
+/// - Parameters:
+/// - level: The heading level.
 public struct AccessibleHeadingModifier: ViewModifier {
   private let level: Int
 

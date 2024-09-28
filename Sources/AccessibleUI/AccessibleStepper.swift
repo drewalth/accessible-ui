@@ -9,10 +9,15 @@ import SwiftUI
 
 // MARK: - AccessibleStepperModifier
 
+/// A view modifier that makes a stepper accessible.
+/// - Parameters:
+/// - label: The label for the stepper.
+/// - value: The binding to the stepper's value.
+/// - range: The range of values for the stepper.
+/// - hint: The hint for the stepper.
 public struct AccessibleStepperModifier: ViewModifier {
 
   // MARK: Lifecycle
-
 
   public init(label: String, value: Binding<Int>, range: ClosedRange<Int>, hint: String?) {
     self.label = label
@@ -22,7 +27,6 @@ public struct AccessibleStepperModifier: ViewModifier {
   }
 
   // MARK: Public
-
 
   public func body(content: Content) -> some View {
     content

@@ -9,10 +9,16 @@ import SwiftUI
 
 // MARK: - AccessibleSliderModifier
 
+/// A view modifier that makes a slider accessible.
+/// - Parameters:
+/// - label: The label for the slider.
+/// - value: The value of the slider.
+/// - minValue: The minimum value of the slider.
+/// - maxValue: The maximum value of the slider.
+/// - hint: The hint for the slider.
 public struct AccessibleSliderModifier: ViewModifier {
 
   // MARK: Lifecycle
-
 
   public init(label: String, value: Binding<Double>, minValue: Double, maxValue: Double, hint: String?) {
     self.label = label
@@ -23,7 +29,6 @@ public struct AccessibleSliderModifier: ViewModifier {
   }
 
   // MARK: Public
-
 
   public func body(content: Content) -> some View {
     content

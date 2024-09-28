@@ -9,6 +9,10 @@ import SwiftUI
 
 // MARK: - AccessibleDismissActionModifier
 
+/// A view modifier for a ``Button`` view that communicates to VoiceOver users that the button will perform a dismiss action.
+/// - Parameters:
+/// - label: The label for the button.
+/// - hint: The hint for the button.
 public struct AccessibleDismissActionModifier: ViewModifier {
   private let label: String
   private let hint: String?

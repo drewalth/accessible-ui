@@ -9,6 +9,10 @@ import SwiftUI
 
 // MARK: - AccessibleButtonModifier
 
+/// A view modifier that makes a button accessible.
+/// - Parameters:
+/// - label: The label for the button.
+/// - hint: The hint for the button.
 public struct AccessibleButtonModifier: ViewModifier {
   private let label: String
   private let hint: String?

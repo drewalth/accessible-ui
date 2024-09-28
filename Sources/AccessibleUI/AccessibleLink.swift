@@ -9,6 +9,10 @@ import SwiftUI
 
 // MARK: - AccessibleLinkModifier
 
+/// A view modifier that makes a view accessible as a link.
+/// - Parameters:
+/// - label: The label for the link.
+/// - hint: The hint for the link.
 public struct AccessibleLinkModifier: ViewModifier {
   private let label: String
   private let hint: String?
