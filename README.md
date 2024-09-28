@@ -2,6 +2,11 @@
 
 ![hero image](/hero.png)
 
+
+[![Swift](https://img.shields.io/badge/Swift-5.9-blue?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_visionOS-blue?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS_Linux_Windows_Android-Green?style=flat-square)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-blue?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
+
 Welcome to **AccessibleUI**, a Swift package designed to streamline the implementation of accessibility features in your SwiftUI apps. This package abstracts the most common accessibility view modifiers, helping you make your apps more inclusive with minimal effort. Whether you're a seasoned iOS developer or just starting out, **AccessibleUI** makes it easier to meet the accessibility standards recommended in Apple's Human Interface Guidelines.
 
 ## 🎯 Project Goal
