@@ -9,51 +9,51 @@ import SwiftUI
 
 // MARK: - AccessiblePickerModifier
 
-public struct AccessiblePickerModifier: ViewModifier {
-
-  // MARK: Lifecycle
-
-
-  public init(label: String, selectedOption: Binding<Int>, options: [String], hint: String?) {
-    self.label = label
-    self.selectedOption = selectedOption
-    self.options = options
-    self.hint = hint
-  }
+/// A view modifier that makes a picker accessible.
+/// - Parameters:
+///  - label: The label for the picker.
+///  - selectedOption: The selected option in the picker.
+///  - options: The available options in the picker.
+///  - hint: The hint for the picker.
+public struct AccessiblePickerModifier<T: Hashable>: ViewModifier {
 
   // MARK: Public
-
 
   public func body(content: Content) -> some View {
     content
       .accessibilityLabel(label)
-      .accessibilityValue(options[selectedOption.wrappedValue])
+      .accessibilityValue("\(selectedOption.wrappedValue)") // Convert selected option to a string
       .accessibilityHint(hint ?? "Swipe up or down to change options")
       .accessibilityAdjustableAction { direction in
+        guard let currentIndex = options.firstIndex(of: selectedOption.wrappedValue) else { return }
+
         switch direction {
         case .increment:
-          selectedOption.wrappedValue = min(selectedOption.wrappedValue + 1, options.count - 1)
+          let nextIndex = min(currentIndex + 1, options.count - 1)
+          selectedOption.wrappedValue = options[nextIndex]
         case .decrement:
-          selectedOption.wrappedValue = max(selectedOption.wrappedValue - 1, 0)
+          let previousIndex = max(currentIndex - 1, 0)
+          selectedOption.wrappedValue = options[previousIndex]
         @unknown default:
           break
         }
       }
   }
 
-  // MARK: Private
+  // MARK: Internal
 
-  private let label: String
-  private let selectedOption: Binding<Int>
-  private let options: [String]
-  private let hint: String?
+  let label: String
+  let selectedOption: Binding<T>
+  let options: [T]
+  let hint: String?
 }
 
 extension View {
-  public func accessiblePicker(
+  // A generic accessiblePicker function that can accept any type conforming to Hashable
+  public func accessiblePicker<T: Hashable>(
     label: String,
-    selectedOption: Binding<Int>,
-    options: [String],
+    selectedOption: Binding<T>,
+    options: [T],
     hint: String? = nil)
     -> some View
   {
