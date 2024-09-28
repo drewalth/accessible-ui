@@ -15,7 +15,7 @@ By using **AccessibleUI**, you’ll spend less time configuring accessibility an
 To get started with **AccessibleUI**, simply add the package to your project via Swift Package Manager:
 
 1. In Xcode, go to **File** > **Add Packages**.
-2. Paste the package URL: 
+2. Paste the package URL: `https://github.com/drewalth/accessible-ui`
 3. Select the version or branch you want to use and integrate it into your app!
 
 ### How to Use
