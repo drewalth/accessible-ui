@@ -20,7 +20,7 @@ public struct AccessibleSliderModifier: ViewModifier {
 
   // MARK: Lifecycle
 
-  public init(label: String, value: Binding<Double>, minValue: Double, maxValue: Double, hint: String?) {
+  public init(label: LocalizedStringKey, value: Binding<Double>, minValue: Double, maxValue: Double, hint: LocalizedStringKey?) {
     self.label = label
     self.value = value
     self.minValue = minValue
@@ -49,20 +49,20 @@ public struct AccessibleSliderModifier: ViewModifier {
 
   // MARK: Private
 
-  private let label: String
+  private let label: LocalizedStringKey
   private let value: Binding<Double>
   private let minValue: Double
   private let maxValue: Double
-  private let hint: String?
+  private let hint: LocalizedStringKey?
 }
 
 extension View {
   public func accessibleSlider(
-    label: String,
+    label: LocalizedStringKey,
     value: Binding<Double>,
     minValue: Double,
     maxValue: Double,
-    hint: String? = nil)
+    hint: LocalizedStringKey? = nil)
     -> some View
   {
     modifier(AccessibleSliderModifier(label: label, value: value, minValue: minValue, maxValue: maxValue, hint: hint))

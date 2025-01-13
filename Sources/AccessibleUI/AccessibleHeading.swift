@@ -22,7 +22,7 @@ public struct AccessibleHeadingModifier: ViewModifier {
   public func body(content: Content) -> some View {
     content
       .accessibilityAddTraits(.isHeader)
-      .accessibilityLabel("Heading level \(level)")
+      .accessibilityLabel(LocalizedStringKey("Heading level \(level)"))
   }
 }
 

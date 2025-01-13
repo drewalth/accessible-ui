@@ -10,11 +10,11 @@ import SwiftUI
 // MARK: - AccessibleToggleModifier
 
 public struct AccessibleToggleModifier: ViewModifier {
-  private let label: String
+  private let label: LocalizedStringKey
   private let isOn: Binding<Bool>
-  private let hint: String?
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, isOn: Binding<Bool>, hint: String?) {
+  public init(label: LocalizedStringKey, isOn: Binding<Bool>, hint: LocalizedStringKey?) {
     self.label = label
     self.isOn = isOn
     self.hint = hint
@@ -30,7 +30,7 @@ public struct AccessibleToggleModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleToggle(label: String, isOn: Binding<Bool>, hint: String? = nil) -> some View {
+  public func accessibleToggle(label: LocalizedStringKey, isOn: Binding<Bool>, hint: LocalizedStringKey? = nil) -> some View {
     modifier(AccessibleToggleModifier(label: label, isOn: isOn, hint: hint))
   }
 }

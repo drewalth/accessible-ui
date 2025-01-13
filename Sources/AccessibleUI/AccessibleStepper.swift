@@ -19,7 +19,7 @@ public struct AccessibleStepperModifier: ViewModifier {
 
   // MARK: Lifecycle
 
-  public init(label: String, value: Binding<Int>, range: ClosedRange<Int>, hint: String?) {
+  public init(label: LocalizedStringKey, value: Binding<Int>, range: ClosedRange<Int>, hint: LocalizedStringKey?) {
     self.label = label
     self.value = value
     self.range = range
@@ -47,14 +47,20 @@ public struct AccessibleStepperModifier: ViewModifier {
 
   // MARK: Private
 
-  private let label: String
+  private let label: LocalizedStringKey
   private let value: Binding<Int>
   private let range: ClosedRange<Int>
-  private let hint: String?
+  private let hint: LocalizedStringKey?
 }
 
 extension View {
-  public func accessibleStepper(label: String, value: Binding<Int>, range: ClosedRange<Int>, hint: String? = nil) -> some View {
+  public func accessibleStepper(
+    label: LocalizedStringKey,
+    value: Binding<Int>,
+    range: ClosedRange<Int>,
+    hint: LocalizedStringKey? = nil)
+    -> some View
+  {
     modifier(AccessibleStepperModifier(label: label, value: value, range: range, hint: hint))
   }
 }

@@ -19,7 +19,12 @@ public struct AccessibleSegmentedControlModifier: ViewModifier {
 
   // MARK: Lifecycle
 
-  public init(label: String, selectedSegment: Binding<Int>, segments: [String], hint: String?) {
+  public init(
+    label: LocalizedStringKey,
+    selectedSegment: Binding<Int>,
+    segments: [LocalizedStringKey],
+    hint: LocalizedStringKey?)
+  {
     self.label = label
     self.selectedSegment = selectedSegment
     self.segments = segments
@@ -47,18 +52,18 @@ public struct AccessibleSegmentedControlModifier: ViewModifier {
 
   // MARK: Private
 
-  private let label: String
+  private let label: LocalizedStringKey
   private let selectedSegment: Binding<Int>
-  private let segments: [String]
-  private let hint: String?
+  private let segments: [LocalizedStringKey]
+  private let hint: LocalizedStringKey?
 }
 
 extension View {
   public func accessibleSegmentedControl(
-    label: String,
+    label: LocalizedStringKey,
     selectedSegment: Binding<Int>,
-    segments: [String],
-    hint: String? = nil)
+    segments: [LocalizedStringKey],
+    hint: LocalizedStringKey? = nil)
     -> some View
   {
     modifier(AccessibleSegmentedControlModifier(

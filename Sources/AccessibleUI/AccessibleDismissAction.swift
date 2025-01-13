@@ -14,10 +14,10 @@ import SwiftUI
 /// - label: The label for the button.
 /// - hint: The hint for the button.
 public struct AccessibleDismissActionModifier: ViewModifier {
-  private let label: String
-  private let hint: String?
+  private let label: LocalizedStringKey
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, hint: String?) {
+  public init(label: LocalizedStringKey, hint: LocalizedStringKey?) {
     self.label = label
     self.hint = hint
   }
@@ -31,7 +31,7 @@ public struct AccessibleDismissActionModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleDismissAction(label: String, hint: String? = nil) -> some View {
+  public func accessibleDismissAction(label: LocalizedStringKey, hint: LocalizedStringKey? = nil) -> some View {
     modifier(AccessibleDismissActionModifier(label: label, hint: hint))
   }
 }

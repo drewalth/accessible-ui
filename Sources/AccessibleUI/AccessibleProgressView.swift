@@ -15,11 +15,11 @@ import SwiftUI
 /// - value: The value of the progress view.
 /// - hint: The hint for the progress view.
 public struct AccessibleProgressViewModifier: ViewModifier {
-  private let label: String
+  private let label: LocalizedStringKey
   private let value: Double? // Optional for indeterminate states
-  private let hint: String?
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, value: Double?, hint: String?) {
+  public init(label: LocalizedStringKey, value: Double?, hint: LocalizedStringKey?) {
     self.label = label
     self.value = value
     self.hint = hint
@@ -34,7 +34,12 @@ public struct AccessibleProgressViewModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleProgressView(label: String, value: Double? = nil, hint: String? = nil) -> some View {
+  public func accessibleProgressView(
+    label: LocalizedStringKey,
+    value: Double? = nil,
+    hint: LocalizedStringKey? = nil)
+    -> some View
+  {
     modifier(AccessibleProgressViewModifier(label: label, value: value, hint: hint))
   }
 }

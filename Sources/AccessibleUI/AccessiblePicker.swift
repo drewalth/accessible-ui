@@ -42,19 +42,19 @@ public struct AccessiblePickerModifier<T: Hashable>: ViewModifier {
 
   // MARK: Internal
 
-  let label: String
+  let label: LocalizedStringKey
   let selectedOption: Binding<T>
   let options: [T]
-  let hint: String?
+  let hint: LocalizedStringKey?
 }
 
 extension View {
   // A generic accessiblePicker function that can accept any type conforming to Hashable
   public func accessiblePicker<T: Hashable>(
-    label: String,
+    label: LocalizedStringKey,
     selectedOption: Binding<T>,
     options: [T],
-    hint: String? = nil)
+    hint: LocalizedStringKey? = nil)
     -> some View
   {
     modifier(AccessiblePickerModifier(label: label, selectedOption: selectedOption, options: options, hint: hint))

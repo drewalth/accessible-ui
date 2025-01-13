@@ -10,10 +10,10 @@ import SwiftUI
 // MARK: - AccessibleTextModifier
 
 public struct AccessibleTextModifier: ViewModifier {
-  private let label: String
-  private let hint: String?
+  private let label: LocalizedStringKey
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, hint: String?) {
+  public init(label: LocalizedStringKey, hint: LocalizedStringKey?) {
     self.label = label
     self.hint = hint
   }
@@ -26,7 +26,7 @@ public struct AccessibleTextModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleText(label: String, hint: String? = nil) -> some View {
+  public func accessibleText(label: LocalizedStringKey, hint: LocalizedStringKey? = nil) -> some View {
     modifier(AccessibleTextModifier(label: label, hint: hint))
   }
 }

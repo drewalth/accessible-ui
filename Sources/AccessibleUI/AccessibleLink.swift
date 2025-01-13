@@ -14,10 +14,10 @@ import SwiftUI
 /// - label: The label for the link.
 /// - hint: The hint for the link.
 public struct AccessibleLinkModifier: ViewModifier {
-  private let label: String
-  private let hint: String?
+  private let label: LocalizedStringKey
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, hint: String?) {
+  public init(label: LocalizedStringKey, hint: LocalizedStringKey?) {
     self.label = label
     self.hint = hint
   }
@@ -31,7 +31,7 @@ public struct AccessibleLinkModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleLink(label: String, hint: String? = nil) -> some View {
+  public func accessibleLink(label: LocalizedStringKey, hint: LocalizedStringKey? = nil) -> some View {
     modifier(AccessibleLinkModifier(label: label, hint: hint))
   }
 }

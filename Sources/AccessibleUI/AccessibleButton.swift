@@ -14,10 +14,10 @@ import SwiftUI
 /// - label: The label for the button.
 /// - hint: The hint for the button.
 public struct AccessibleButtonModifier: ViewModifier {
-  private let label: String
-  private let hint: String?
+  private let label: LocalizedStringKey
+  private let hint: LocalizedStringKey?
 
-  public init(label: String, hint: String?) {
+  public init(label: LocalizedStringKey, hint: LocalizedStringKey?) {
     self.label = label
     self.hint = hint
   }
@@ -31,7 +31,7 @@ public struct AccessibleButtonModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleButton(label: String, hint: String? = nil) -> some View {
+  public func accessibleButton(label: LocalizedStringKey, hint: LocalizedStringKey? = nil) -> some View {
     modifier(AccessibleButtonModifier(label: label, hint: hint))
   }
 }

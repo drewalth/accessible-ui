@@ -13,9 +13,9 @@ import SwiftUI
 /// - Parameters:
 /// - label: The label for the image.
 public struct AccessibleImageModifier: ViewModifier {
-  private let label: String
+  private let label: LocalizedStringKey
 
-  public init(label: String) {
+  public init(label: LocalizedStringKey) {
     self.label = label
   }
 
@@ -27,7 +27,7 @@ public struct AccessibleImageModifier: ViewModifier {
 }
 
 extension View {
-  public func accessibleImage(label: String) -> some View {
+  public func accessibleImage(label: LocalizedStringKey) -> some View {
     modifier(AccessibleImageModifier(label: label))
   }
 }
