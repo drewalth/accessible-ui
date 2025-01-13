@@ -31,3 +31,11 @@ extension View {
     modifier(AccessibleHeadingModifier(level: level))
   }
 }
+
+#if DEBUG
+#Preview {
+  Text("Hello, world!")
+    .font(.title)
+    .accessibleHeading(level: 1)
+}
+#endif

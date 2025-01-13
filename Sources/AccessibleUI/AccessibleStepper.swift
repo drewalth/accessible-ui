@@ -64,3 +64,20 @@ extension View {
     modifier(AccessibleStepperModifier(label: label, value: value, range: range, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  struct MyTestStepperView: View {
+    @State private var value = 0
+
+    var body: some View {
+      VStack {
+        Text("Value: \(value)")
+        Stepper("Hello world", value: $value, in: 0...100)
+          .accessibleStepper(label: "Hello, world!", value: $value, range: 0...100, hint: "Use swipe up or down to adjust")
+      }
+    }
+  }
+  return MyTestStepperView()
+}
+#endif

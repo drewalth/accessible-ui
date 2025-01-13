@@ -35,3 +35,10 @@ extension View {
     modifier(AccessibleLinkModifier(label: label, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  Text("Hello, world!")
+    .accessibleLink(label: "Hello, world!", hint: "Double tap to open the link")
+}
+#endif

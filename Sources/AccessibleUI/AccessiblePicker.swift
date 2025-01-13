@@ -60,3 +60,27 @@ extension View {
     modifier(AccessiblePickerModifier(label: label, selectedOption: selectedOption, options: options, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  struct MyTestPickerView: View {
+    @State private var selectedOption = "Option 1"
+    let options: [String] = ["Option 1", "Option 2", "Option 3"]
+
+    var body: some View {
+      Picker("Hello, world!", selection: $selectedOption) {
+        ForEach(options, id: \.self) { option in
+          Text(option)
+        }
+      }
+      .pickerStyle(.menu)
+      .accessiblePicker(
+        label: "Hello, world!",
+        selectedOption: $selectedOption,
+        options: options,
+        hint: "Double tap to change options")
+    }
+  }
+  return MyTestPickerView()
+}
+#endif

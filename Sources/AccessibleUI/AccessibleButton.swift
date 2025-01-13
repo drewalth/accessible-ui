@@ -35,3 +35,12 @@ extension View {
     modifier(AccessibleButtonModifier(label: label, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  Button("Hello, world!") {
+    print("Hello, world!")
+  }
+  .accessibleButton(label: "Hello, world!", hint: "Tap to activate")
+}
+#endif

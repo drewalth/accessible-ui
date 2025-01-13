@@ -30,3 +30,10 @@ extension View {
     modifier(AccessibleTextModifier(label: label, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  Text("Hello, world!")
+    .accessibleText(label: "Hello, world!", hint: "This is a hint")
+}
+#endif

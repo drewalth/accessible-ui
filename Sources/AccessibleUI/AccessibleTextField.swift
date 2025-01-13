@@ -31,3 +31,17 @@ extension View {
     modifier(AccessibleTextFieldModifier(label: label, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  struct MyTestTextFieldView: View {
+    @State private var text = ""
+
+    var body: some View {
+      TextField("Hello, world!", text: $text)
+        .accessibleTextField(label: "Hello, world!", hint: "This is a hint")
+    }
+  }
+  return MyTestTextFieldView()
+}
+#endif

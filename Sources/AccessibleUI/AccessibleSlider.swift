@@ -68,3 +68,10 @@ extension View {
     modifier(AccessibleSliderModifier(label: label, value: value, minValue: minValue, maxValue: maxValue, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  Slider(value: .constant(0.5), in: 0...1)
+    .accessibleSlider(label: "Hello, world!", value: .constant(0.5), minValue: 0, maxValue: 1, hint: "Adjust the slider")
+}
+#endif

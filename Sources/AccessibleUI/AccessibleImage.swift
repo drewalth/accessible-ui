@@ -31,3 +31,10 @@ extension View {
     modifier(AccessibleImageModifier(label: label))
   }
 }
+
+#if DEBUG
+#Preview {
+  Image(systemName: "heart")
+    .accessibleImage(label: "Heart")
+}
+#endif

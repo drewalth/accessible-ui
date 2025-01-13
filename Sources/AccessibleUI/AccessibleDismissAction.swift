@@ -35,3 +35,12 @@ extension View {
     modifier(AccessibleDismissActionModifier(label: label, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  Button("Hello, world!") {
+    print("Hello, world!")
+  }
+  .accessibleDismissAction(label: "Hello, world!", hint: "Double tap to dismiss")
+}
+#endif

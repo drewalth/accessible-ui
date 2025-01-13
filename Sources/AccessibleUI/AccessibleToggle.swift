@@ -34,3 +34,20 @@ extension View {
     modifier(AccessibleToggleModifier(label: label, isOn: isOn, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  struct MyTestToggleView: View {
+    @State private var isOn = false
+
+    var body: some View {
+      VStack {
+        Text("Is on: \(isOn ? "On" : "Off")")
+        Toggle("Hello, world!", isOn: $isOn)
+          .accessibleToggle(label: "Hello, world!", isOn: $isOn, hint: "This is a hint")
+      }
+    }
+  }
+  return MyTestToggleView()
+}
+#endif

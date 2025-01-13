@@ -43,3 +43,10 @@ extension View {
     modifier(AccessibleProgressViewModifier(label: label, value: value, hint: hint))
   }
 }
+
+#if DEBUG
+#Preview {
+  ProgressView("Hello, world!", value: 0.5)
+    .accessibleProgressView(label: "Hello, world!", value: 0.5, hint: "Indicates progress")
+}
+#endif
