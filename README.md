@@ -1,4 +1,6 @@
-# AccessibleUI: Simplifying Accessibility in SwiftUI
+# AccessibleUI
+
+#### A Swift package providing a set of pre-configured `ViewModifier`s to make adding accessibility features to your SwiftUI views a bit easier.
 
 ![hero image](/hero.png)
 
@@ -7,23 +9,19 @@
 [![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_visionOS-blue?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS_Linux_Windows_Android-Green?style=flat-square)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-blue?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
-Welcome to **AccessibleUI**, a Swift package designed to streamline the implementation of accessibility features in your SwiftUI apps. This package abstracts the most common accessibility view modifiers, helping you make your apps more inclusive with minimal effort. Whether you're a seasoned iOS developer or just starting out, **AccessibleUI** makes it easier to meet the accessibility standards recommended in Apple's Human Interface Guidelines.
-
-## 🎯 Project Goal
-
-The goal of **AccessibleUI** is to lower the barrier to building accessible apps by providing a set of pre-configured view modifiers to effortlessly add accessibility features like labels, hints, and traits to common SwiftUI components, ensuring all users have a seamless experience, including those using assistive technologies like VoiceOver.
-
-By using **AccessibleUI**, you’ll spend less time configuring accessibility and more time creating incredible user experiences!
-
 ## 🚀 Getting Started
 
-To get started with **AccessibleUI**, simply add the package to your project via Swift Package Manager:
+Add the following to your `Package.swift` file:
 
-1. In Xcode, go to **File** > **Add Packages**.
-2. Paste the package URL: `https://github.com/drewalth/accessible-ui`
-3. Select the version or branch you want to use and integrate it into your app!
+```swift
+dependencies: [
+  .package(url: "https://github.com/drewalth/accessible-ui.git", from: "1.0.0"),
+]
+```
 
-### How to Use
+Or, add the package to your Xcode project by going to **File** > **Add Packages** and pasting the URL: `https://github.com/drewalth/accessible-ui.git`.
+
+### Usage
 
 Here’s a quick look at how **AccessibleUI** simplifies common SwiftUI accessibility patterns:
 
@@ -76,8 +74,3 @@ struct ContentView: View {
 }
 ```
 
-With **AccessibleUI**, you can quickly apply accessibility best practices to your views without having to write custom accessibility code for each component over and over again. This makes it easier to build inclusive apps that cater to all users, regardless of their abilities.
-
-## 🔧 Customization
-
-Every app is different, so **AccessibleUI** allows you to customize hints, labels, and traits to suit your specific needs. Each modifier accepts parameters that you can adjust based on the context of your app, making the framework flexible while ensuring your app meets accessibility standards.
